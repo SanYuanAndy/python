@@ -1,9 +1,10 @@
 #coding=utf-8
 import csv
 import json
+import os
 from syencoder import gbk2utf
 
-def read_csv_format_as_utf8(csvfile):
+def read_csv_format_as_utf8(csvfile, josnfile):
     f = file(csvfile, 'rb')
     reader = csv.reader(f)
 
@@ -39,13 +40,44 @@ def read_csv_format_as_utf8(csvfile):
     print data
 
     #写到json文件去
-    fo = open("theme.json", "wb")
+    fo = open(josnfile, "wb")
     fo.write(data)
 
     #关闭文件
     fo.close()
     f.close()
 
-src = 'src.csv'    
-read_csv_format_as_utf8(src)
+def select_item(items):
+    while True:
+        for i in range(0, len(items)):
+            print("[%d]%s")%(i,items[i])
+        str_num = raw_input("""输入数字选择(输入'q'退出)：""")
+        if str_num == 'q':
+            return -1
+        try:
+            num = int(str_num)
+            if num < len(items):
+                return num
+        except:
+            continue
+        
+xls = 'xls'
+if not os.path.exists(xls):
+    exit(0)
+csvs = []
+for f in os.listdir(xls):
+    if f.endswith('.csv'):
+        csvs.append(f)
+print csvs
+num = select_item(csvs)
+if num < 0:
+    print 'exit!!!'
+    exit(0)
+    
+themeName = csvs[num].replace('.csv', '')
+print themeName
+src = xls + '/' + csvs[num]
+print src
+dst = xls + '/' + csvs[num].replace('.csv', '.json')
+read_csv_format_as_utf8(src, dst)
     
