@@ -1,0 +1,2 @@
+python check_proc_priority.py
+pause

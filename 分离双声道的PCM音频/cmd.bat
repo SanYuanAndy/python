@@ -1,0 +1,2 @@
+python separate.py
+pause

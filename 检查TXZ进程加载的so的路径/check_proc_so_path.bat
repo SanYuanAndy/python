@@ -1,0 +1,2 @@
+python check_proc_so_path.py
+pause
