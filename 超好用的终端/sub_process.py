@@ -30,21 +30,46 @@ class redirecThread(threading.Thread):
                 print '\n'
 
     def run(self):
+        buffer = ""
+        line = ""
         while True:
-            buffer = self.proc.stdout.readline()
+            #buffer = self.proc.stdout.readline()#直到读到换行符才会返回
+            #self.proc.stdout.read()#读到结束符才返回
+            #self.proc.stdout.read(count)#读到count个字节才返回
+            buffer = "%s%s"%(buffer, self.proc.stdout.read(1))
             if len(buffer) == 0:
-                #print 'read end'
-                print_t('read end')
-                #print '\n'
+                #print_t('read end')
                 break
-            if buffer.startswith('\r\n'):
+            out_encode = sys.stdout.encoding
+            #中文符号单个字节解码失败，需要缓存下来
+            tem_buf = ""
+            errCnt = 0
+            try:
+                tem_buf = buffer.decode('utf8').encode(out_encode)
+            except Exception, e:
+                errCnt += 1
+                #continue
+            try:
+                tem_buf = buffer.decode('gbk').encode(out_encode)
+            except Exception, e:
+                errCnt += 1
+                #continue
+            if errCnt == 2:
                 continue
-            buffer = buffer.replace("\r\n", "")
-            #print buffer
+
+            #print buffer#会换行
             if self.file == None:
-                print buffer
-            else:
-                self.file.write(buffer)
+                sys.stdout.write(buffer)#不会换行
+                sys.stdout.flush()#立即显示
+
+            line = "%s%s"%(line, buffer)
+            buffer = ""
+            if line.endswith("\r\n"):
+                #print_t("%s%s"%("[M]", line))
+                if not line.startswith('\r\n'):
+                    line = line.replace("\r\n", "")
+                    if self.file != None:
+                        self.file.write(line)
 
     def time_out(self, out):
         pass
@@ -67,6 +92,7 @@ class SelfProcess:
         #中间会产生以下流程:创建shell(cmd)进程，shell(cmd)进程创建目标进程。这样的话，目标进程是本进程的孙子进程，而不是子进程
         #可以推测，cmd窗口中命令行输出重定向到文件，应该也是这种实现方式
         self.proc = subprocess.Popen(temp[0], stdout = subprocess.PIPE, shell = False)
+        #self.proc = subprocess.Popen(temp[0], stdin = subprocess.PIPE, stdout = subprocess.PIPE, shell = False)
         if self.proc != None and self.nTimeOut != None:
             t1 = timeOutThread(self, self.nTimeOut)
             t1.start()
@@ -80,9 +106,12 @@ class SelfProcess:
 
     def terminate(self):
         if self.proc != None and self.proc.poll() == None:
-            print_t('terminate')
+            #print_t('terminate')
             #print '\n'
             self.proc.terminate()
+    def wait(self):
+        if self.proc != None and self.proc.poll() == None:
+            self.proc.wait()
 
 if __name__ == '__main__':
     proc = SelfProcess("adb logcat -v time > yzs", 10)

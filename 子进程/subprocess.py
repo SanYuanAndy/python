@@ -26,5 +26,5 @@ if __name__ == "__main__":
             p.join()
         #time.sleep(2)
         print p.is_alive()
-    print "Main Process exit"
+    print "Main Process exit 0"
     
