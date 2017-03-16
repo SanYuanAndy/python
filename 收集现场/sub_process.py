@@ -3,7 +3,7 @@ import subprocess
 import time
 import threading
 import sys
-
+from syutil import print_t
 class timeOutThread(threading.Thread):
     def __init__(self, proc, nTimeOut):
         threading.Thread.__init__(self)
@@ -27,12 +27,15 @@ class redirecThread(threading.Thread):
                 self.file = open(target, 'w')
             except Exception, e:
                 print str(e)
+                print '\n'
 
     def run(self):
         while True:
             buffer = self.proc.stdout.readline()
             if len(buffer) == 0:
-                print 'read end'
+                #print 'read end'
+                print_t('read end')
+                #print '\n'
                 break
             if buffer.startswith('\r\n'):
                 continue
@@ -51,9 +54,11 @@ class SelfProcess:
     proc_cnt = 0
     
     def __init__(self, sProcName, nTimeOut):
+        print_t(sProcName)
+        #print '\n'
         temp = sProcName.split('>')
-        print temp
-        print temp[0]
+        #print temp
+        #print temp[0]
 
         self.sProcName = sProcName
         self.nTimeOut = nTimeOut
@@ -64,14 +69,15 @@ class SelfProcess:
         target =None
         if len(temp) == 2:
             target = temp[1].replace(" ", "")
-        print target
+        #print target
         if self.proc != None:
             t2 = redirecThread(self.proc, target)
             t2.start()
 
     def terminate(self):
         if self.proc != None and self.proc.poll() == None:
-            print 'terminate'
+            print_t('terminate')
+            #print '\n'
             self.proc.terminate()
 
 if __name__ == '__main__':
