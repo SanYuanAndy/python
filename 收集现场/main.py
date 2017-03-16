@@ -44,7 +44,7 @@ class workThread(threading.Thread):
         self.nTimeOut = nTimeOut
     def run(self):
         if self.infoType == 1000 :
-            pull_src("/sdcard/txz/log", "")
+            pull_src("/sdcard/txz", "")
         else:
             save_sys_info(self.target, self.infoType, self.nTimeOut)
 
