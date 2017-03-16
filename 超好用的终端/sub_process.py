@@ -56,7 +56,7 @@ class redirecThread(threading.Thread):
                 #continue
             if errCnt == 2:
                 continue
-
+            buffer = tem_buf
             #print buffer#会换行
             if self.file == None:
                 sys.stdout.write(buffer)#不会换行
