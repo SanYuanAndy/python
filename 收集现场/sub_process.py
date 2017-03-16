@@ -62,6 +62,9 @@ class SelfProcess:
 
         self.sProcName = sProcName
         self.nTimeOut = nTimeOut
+        #stdout = subprocess.PIPE表示子进程的标准输出会被重定向到特定管道，这样父进程和子进程就可以通讯了
+        #如果shell = True，表示目录执行程序，由Shell进程调起。
+        #中间会产生以下流程:创建shell(cmd)进程，shell(cmd)进程创建目标进程。这样的话，目标进程是本进程的孙子进程，而不是子进程
         self.proc = subprocess.Popen(temp[0], stdout = subprocess.PIPE, shell = False)
         if self.proc != None and self.nTimeOut != None:
             t1 = timeOutThread(self, self.nTimeOut)
