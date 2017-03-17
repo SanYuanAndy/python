@@ -35,12 +35,23 @@ class writeThread(threading.Thread):
                 break
         if not self.proc_exited:
             print_n('>')
+        if self.file != None:
+            try:
+                self.file.close()
+                self.file = None
+            except Exception, e:
+                pass
+
     def print_cache(self, content):
         try:
             content = content.decode('utf8').encode('gbk')
         except Exception, e:
             pass
-        print_n(content)
+        if self.file != None:
+            self.file.write(content)
+        else:
+            print_n(content)
+
     def proc_wait(self):
         pass
         self.proc_exited = True
