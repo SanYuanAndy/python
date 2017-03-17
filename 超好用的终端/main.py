@@ -5,6 +5,7 @@ import os
 import sub_process
 import sys
 import signal
+import syos
 from syutil import parse_path
 from syutil import del_dir
 from syutil import format_time
@@ -39,7 +40,7 @@ class workThread(threading.Thread):
             if strInput == "":
                 continue
             try:
-                child_proc = sub_process.SelfProcess(strInput, None)
+                child_proc = syos.SelfProcess(strInput, None)
                 #proc.wait()
             except Exception, e:
                 pass
@@ -47,12 +48,6 @@ class workThread(threading.Thread):
 #cmd = "adb shell"
 #proc = sub_process.SelfProcess(cmd, None)#作用与用法类似与os.system(cmd)，但是可以设置命令运行的最大时长，填None则不限时
 def main():
-    ############test############
-    test = "你好"
-    if not os.path.exists(test):
-        f = open(test, 'w')
-        f.close()
-    ############test############
     #signal.signal(signal.SIGINT, quit)
     t1 = workThread()
     t1.start()
