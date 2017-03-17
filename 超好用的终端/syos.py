@@ -13,6 +13,7 @@ class writeThread(threading.Thread):
         self.proc = proc
         self.target = target
         self.file = None
+        self.proc_exited = False
         if target != None and len(target)!= 0:
             self.target = target
             try:
@@ -32,13 +33,17 @@ class writeThread(threading.Thread):
                 self.print_cache(buf)#输出缓存数据
                 buf = ''
                 break
-        print_n('>')
+        if not self.proc_exited:
+            print_n('>')
     def print_cache(self, content):
         try:
             content = content.decode('utf8').encode('gbk')
         except Exception, e:
             pass
         print_n(content)
+    def proc_wait(self):
+        pass
+        self.proc_exited = True
 
 
 
@@ -94,7 +99,7 @@ class SelfProcess:
             self.proc.terminate()
     def wait(self):
         if self.isAlive():
-            self.proc.wait()
+            self.t2.proc_wait()
             self.t1.join(5)
             self.t2.join(5)
     def write(self, strInput):
