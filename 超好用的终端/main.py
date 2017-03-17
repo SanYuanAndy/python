@@ -17,21 +17,30 @@ class workThread(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
     def run(self):
+        child_proc = None
         while True:
+            prompt = '>'
+            if child_proc != None and child_proc.isAlive():
+                prompt = ""
             try:
                 pass
-                strInput = raw_input(">")#不包含换行符Ctrl+C会抛异常
+                strInput = raw_input(prompt)#不包含换行符Ctrl+C会抛异常
             except Exception, e:
                 print_t(str(e))
                 continue
 
+            if child_proc != None and child_proc.isAlive():
+                strInput = strInput.decode('gbk').encode('utf8')
+                child_proc.write(strInput)
+                child_proc.write('\n')
+                continue
             if strInput == "exit":
                 break
             if strInput == "":
                 continue
             try:
-                proc = sub_process.SelfProcess(strInput, None)
-                proc.wait()
+                child_proc = sub_process.SelfProcess(strInput, None)
+                #proc.wait()
             except Exception, e:
                 pass
                 print_t(str(e))

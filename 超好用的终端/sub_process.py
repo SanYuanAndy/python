@@ -43,18 +43,9 @@ class redirecThread(threading.Thread):
             out_encode = sys.stdout.encoding
             #中文符号单个字节解码失败，需要缓存下来
             tem_buf = ""
-            errCnt = 0
             try:
                 tem_buf = buffer.decode('utf8').encode(out_encode)
             except Exception, e:
-                errCnt += 1
-                #continue
-            try:
-                tem_buf = buffer.decode('gbk').encode(out_encode)
-            except Exception, e:
-                errCnt += 1
-                #continue
-            if errCnt == 2:
                 continue
             buffer = tem_buf
             #print buffer#会换行
@@ -91,7 +82,7 @@ class SelfProcess:
         #如果shell = True，表示目录执行程序，由Shell进程调起。
         #中间会产生以下流程:创建shell(cmd)进程，shell(cmd)进程创建目标进程。这样的话，目标进程是本进程的孙子进程，而不是子进程
         #可以推测，cmd窗口中命令行输出重定向到文件，应该也是这种实现方式
-        self.proc = subprocess.Popen(temp[0], stdout = subprocess.PIPE, shell = False)
+        self.proc = subprocess.Popen(temp[0], stdin = subprocess.PIPE, stdout = subprocess.PIPE, shell = False)
         #self.proc = subprocess.Popen(temp[0], stdin = subprocess.PIPE, stdout = subprocess.PIPE, shell = False)
         if self.proc != None and self.nTimeOut != None:
             t1 = timeOutThread(self, self.nTimeOut)
@@ -112,6 +103,13 @@ class SelfProcess:
     def wait(self):
         if self.proc != None and self.proc.poll() == None:
             self.proc.wait()
+    def isAlive(self):
+        if self.proc != None and self.proc.poll() == None:
+            return True
+    def write(self, strInput):
+        if self.isAlive():
+            self.proc.stdin.write(strInput)
+
 
 if __name__ == '__main__':
     proc = SelfProcess("adb logcat -v time > yzs", 10)
