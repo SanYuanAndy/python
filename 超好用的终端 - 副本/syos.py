@@ -32,7 +32,7 @@ class writeThread(threading.Thread):
                 self.print_cache(buf)#输出缓存数据
                 buf = ''
                 break
-        print_n('>')
+        print_n('write end')
     def print_cache(self, content):
         try:
             content = content.decode('utf8').encode('gbk')
@@ -58,12 +58,12 @@ class readThread(threading.Thread):
             if len(buffer) == 0:
                 ret = self.proc.isAlive()
                 if ret:
-                    pass
-                    #print_t(ret)
+                    print_t(ret)
                     #continue
                 self.proc.msg_queue.put(buffer)
                 break
             self.proc.msg_queue.put(buffer)
+        print_t("exit readThread")
 
 
 class SelfProcess:
@@ -84,10 +84,10 @@ class SelfProcess:
         #print target
         if self.proc != None:
             self.msg_queue = Queue.Queue()
-            self.t1 = readThread(self, target)
-            self.t1.start()
-            self.t2 = writeThread(self, target)
-            self.t2.start()
+            t1 = readThread(self, target)
+            t1.start()
+            t2 = writeThread(self, target)
+            t2.start()
 
     def terminate(self):
         if self.isAlive():
@@ -95,8 +95,6 @@ class SelfProcess:
     def wait(self):
         if self.isAlive():
             self.proc.wait()
-            self.t1.join(5)
-            self.t2.join(5)
     def write(self, strInput):
         if self.isAlive():
             self.proc.stdin.write(strInput)

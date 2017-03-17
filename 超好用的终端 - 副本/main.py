@@ -33,8 +33,7 @@ class workThread(threading.Thread):
                 strInput = strInput.decode('gbk').encode('utf8')
                 child_proc.write(strInput)
                 child_proc.write('\n')
-                if strInput == 'exit':
-                    child_proc.wait()
+                child_proc.wait()
                 continue
             if strInput == "exit":
                 break
