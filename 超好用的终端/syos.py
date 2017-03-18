@@ -43,6 +43,7 @@ class writeThread(threading.Thread):
                 pass
 
     def print_cache(self, content):
+        #两种可能不抛异常:1、不含中文。2、含中文、但是中文编码是utf8
         try:
             content = content.decode('utf8').encode('gbk')
         except Exception, e:
