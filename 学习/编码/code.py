@@ -11,6 +11,7 @@ stdout_encode = sys.stdout.encoding #获取输出终端的编码方式
 print "stdout.encode ： %s" % (stdout_encode)
 
 str = u'你好世界' #unicode编码方法保存字符串
+print str
 str = str.encode(stdout_encode) #unicode编码直接转成输出终端使用的编码方式
 print str
 

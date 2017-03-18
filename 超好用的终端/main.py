@@ -30,7 +30,10 @@ class workThread(threading.Thread):
                 continue
 
             if child_proc != None and child_proc.isAlive():
-                strInput = strInput.decode('gbk').encode('utf8')
+                try:
+                    strInput = strInput.decode('gbk').encode('utf8')#输入可能是utf8编码
+                except Exception, e:
+                    pass
                 child_proc.write(strInput)
                 child_proc.write('\n')
                 if strInput == 'exit':
