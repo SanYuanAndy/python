@@ -5,11 +5,29 @@ import os
 import sys
 import signal
 import syos
+import re
+import code
 from syutil import parse_path
 from syutil import del_dir
 from syutil import format_time
 from syutil import print_t
+from syutil import print_n
 
+precmd_pattern = None
+def pre_process(strInput):
+    global precmd_pattern
+    if precmd_pattern == None:
+        precmd_pattern = re.compile(r'dir|copy|cd', re.I)
+    if precmd_pattern.match(strInput) != None:
+        #os.system(strInput)
+        p = os.popen(strInput)
+        lines = p.readlines()
+        for line in lines:
+            print_n(code.gbk(line))
+        return True
+    else:
+        return False
+    
 def quit(signum, frame):
     pass
 
@@ -42,6 +60,8 @@ class workThread(threading.Thread):
             if strInput == "exit":
                 break
             if strInput == "":
+                continue
+            if pre_process(strInput):
                 continue
             try:
                 child_proc = syos.SelfProcess(strInput, None)
