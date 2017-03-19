@@ -1,30 +1,25 @@
 #coding=utf8
 import os
 import sys
+import re
 from code import __code
 from code import gbk
+
+def del_special_file(dir, pattern):
+    if os.path.isdir(dir):
+        listdir = os.listdir(dir)
+        for subdir in listdir:
+            subdir = os.path.join(dir, subdir)
+            del_special_file(subdir, pattern)
+    else:
+        if pattern.match(dir) != None:
+            print 'del dir %s'%(dir)
+            os.remove(dir)
+
 cwd = os.getcwd()
 print cwd
-listdir = os.listdir(cwd)
-
-for dir in listdir:
-    #抛异常说明dir含有gbk格式的中文
-    try:
-        dir = dir.decode('utf8').encode('gbk')
-    except Exception, e:
-        pass
-    print dir
-
-print ""
-print sys.stdout.encoding
-s = "你好"#s是utf8编码
-print s
-s = s.decode('gbk').encode('utf8')#不会抛异常
-print s
-
-s1 = u"你好"
-print s1
-print s1.encode('gbk')
-print s1.encode('utf8')
-print __code(s1, 'gbk', 'gbk')
+strPattern = r'^.*\.pyc'#加上‘r’,不会被转义，输出的和写入的一样
+pattern = re.compile(strPattern,re.I);
+del_special_file(cwd, pattern)
+    
 
