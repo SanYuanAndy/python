@@ -10,27 +10,7 @@ buf = f.read()
 f.close()
 seq = bytearray(buf)
 print len(seq)
-'''
-for i in range(0, 16*16):
-    #sHex = "%4d"%(seq[i])
-    sHex = "%x"%(seq[i])
-    if len(sHex) == 1:
-        sHex = "0%s"%(sHex)
-    print_n(sHex)
-    print_n(' ')
-    if (i + 1)%16 == 0:
-        print_n('\n')
-'''
-print
 
-def write_csv(csvfile, data):
-    f = file(csvfile, 'wb')
-    writer = csv.writer(f)
-    #data = [['1','1234567'], ['2','789456']]
-    writer.writerow(['num', 'value'])
-    writer.writerows(data)
-    f.close()
-  
 value = []
 for i in range(0, len(seq) - 2, 2):
     v = 0
@@ -43,27 +23,7 @@ for i in range(0, len(seq) - 2, 2):
     '''
     v = ctypes.c_int16(v).value
     value.append(v)
-    if i > len(seq)/ 1024:
-        continue
-    sHex = "%d"%(v)
-    '''
-    if len(sHex) == 3:
-        sHex = "0%s"%(sHex)
-    if len(sHex) == 1:
-        sHex = "000%s"%(sHex)
-    '''
-    '''
-    print_n(sHex)
-    print_n(' ')
-    if (i + 2)%16 == 0:
-        print_n('\n')
-    '''
-    
 
-#write_csv("test.csv", sValue)
-emptyCnt = 0
-fullCnt = 0
-result = {}
 index = []
 win_size = 16000/1000*20
 i = 0
@@ -78,7 +38,6 @@ while i < v_len:
             break
         logVal = abs(value[i + j])
         if logVal > 0 and  20*math.log10(logVal) > mute_db:
-            #print 'a'
             break
         j = j + 1
         
@@ -98,8 +57,6 @@ for i in range(0, len(index)):
         value[j] = 'a'
         
 outstream = bytearray()
-
-#outstream = seq
 for val in value:
     if val != 'a':
         sample = ctypes.c_uint16(val).value
