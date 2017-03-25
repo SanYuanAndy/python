@@ -2,6 +2,7 @@
 import os
 import csv
 from syutil import print_n
+from syutil import del_dir
 import ctypes
 import math
 
@@ -81,8 +82,8 @@ def saveCutVoice(value,source):
             sample = ctypes.c_uint16(val).value
             outstream.append(sample & 0x00ff)
             outstream.append((sample >> 8) & 0xff)
-
-    fw = open('cut_%s'%(source), 'wb')
+    out_file = source
+    fw = open(out_file, 'wb')
     fw.write(outstream)
     fw.close()
     print len(outstream)
@@ -128,8 +129,16 @@ def cutVoices(source, muteTime, muteThreshold):
     index = getMuteIndex(sample, muteTime, muteThreshold, win_size)
     voices = getVoices(sample, index, source, win_size)
     cnt = 0
+    #####
+    out_dir = 'out_%s'%(source)
+    out_dir = out_dir.replace('.pcm', "")
+    if os.path.exists(out_dir):
+        del_dir(out_dir)
+    if not os.path.exists(out_dir):
+        os.mkdir(out_dir)
+    #####
     for voice in voices:
-        saveCutVoice(voice, '%d_%s'%(cnt,source))
+        saveCutVoice(voice, r'%s\%d_%s'%(out_dir,cnt,source))
         cnt = cnt + 1
 cutMutes(r'test.pcm', 10, 2000)
 cutVoices(r'test.pcm', 100, 2000)
