@@ -1,0 +1,2 @@
+python checkMem.py
+pause

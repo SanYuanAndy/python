@@ -51,7 +51,7 @@ while True:
         if strInput == 'exit':
             break
         cmd = "adb shell"
-        proc_cmd = "am broadcast -a com.txznet.alldemo.intent.action.cmd --es cmd %s --es text_args %s"%(func[item]["cmd"],strInput)
+        proc_cmd = 'am broadcast -a com.txznet.alldemo.intent.action.cmd --es cmd %s --es text_args "%s"'%(func[item]["cmd"],strInput)
         proc_cmd = code.utf8(proc_cmd)
         proc = syos.SelfProcess(cmd, None)
         proc.disable_print()
