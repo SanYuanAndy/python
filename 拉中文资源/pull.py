@@ -4,8 +4,8 @@ import syos
 import code
 import time
 
-#targetDir = "/sdcard/txz/voice/wk"
-targetDir = "/sdcard/alldemo/voice_wk"
+targetDir = "/sdcard/txz/voice/wk"
+#targetDir = "/sdcard/alldemo/voice_wk"
 def list_dir(path):
     cmd = 'adb shell ls %s'%(path)
     p = os.popen(cmd)
@@ -41,7 +41,12 @@ def pull(all_file, targetDir):
         child_proc.write('\n')
         time.sleep(0.05)
         pullFile("%s/%s"%(targetDir, newName), code.gbk(oldName))
-        
+    time.sleep(0.1)
+    rm_tmp_cmd = "rm new*"
+    child_proc.write(rm_tmp_cmd)
+    child_proc.write('\n')
+    time.sleep(0.1)
+     
     child_proc.write(exit_cmd)
     child_proc.write('\n')
     child_proc.wait()
