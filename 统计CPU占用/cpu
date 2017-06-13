@@ -1,0 +1,153 @@
+
+
+
+User 0%, System 0%, IOW 0%, IRQ 0%
+User 0 + Nice 0 + Sys 0 + Idle 200 + IOW 0 + IRQ 0 + SIRQ 0 = 200
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+ 3203  1   1% R     1   1936K    536K     shell    top
+ 2012  1   0% S     3   4108K    376K     media_rw /system/bin/sdcard
+ 1905  1   0% S    10 738468K  41296K  fg u0_a16   com.bluestacks.bstfolder
+    4  0   0% S     1      0K      0K     root     kworker/0:0
+    5  0   0% S     1      0K      0K     root     kworker/0:0H
+    6  1   0% S     1      0K      0K     root     kworker/u4:0
+    7  0   0% S     1      0K      0K     root     rcu_preempt
+    8  1   0% S     1      0K      0K     root     rcu_sched
+    9  0   0% S     1      0K      0K     root     rcu_bh
+   10  0   0% S     1      0K      0K     root     rcuop/0
+
+
+
+User 0%, System 1%, IOW 0%, IRQ 0%
+User 1 + Nice 0 + Sys 3 + Idle 200 + IOW 0 + IRQ 0 + SIRQ 0 = 204
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+ 3203  1   0% R     1   1940K    536K     shell    top
+ 1744  0   0% S    59 746952K  57332K  fg system   system_server
+   20  0   0% S     1      0K      0K     root     rcuop/1
+    4  0   0% S     1      0K      0K     root     kworker/0:0
+    5  0   0% S     1      0K      0K     root     kworker/0:0H
+    6  1   0% S     1      0K      0K     root     kworker/u4:0
+    7  0   0% S     1      0K      0K     root     rcu_preempt
+    8  1   0% S     1      0K      0K     root     rcu_sched
+    9  0   0% S     1      0K      0K     root     rcu_bh
+   10  1   0% S     1      0K      0K     root     rcuop/0
+
+
+
+User 0%, System 0%, IOW 0%, IRQ 0%
+User 2 + Nice 0 + Sys 0 + Idle 200 + IOW 0 + IRQ 0 + SIRQ 0 = 202
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+  301  1   0% S     1      0K      0K     root     kworker/1:1
+ 1893  0   0% S    23 756280K  52536K  fg radio    com.android.phone
+ 3203  1   0% R     1   1940K    536K     shell    top
+    4  0   0% S     1      0K      0K     root     kworker/0:0
+    5  0   0% S     1      0K      0K     root     kworker/0:0H
+    6  1   0% S     1      0K      0K     root     kworker/u4:0
+    7  0   0% S     1      0K      0K     root     rcu_preempt
+    8  1   0% S     1      0K      0K     root     rcu_sched
+    9  0   0% S     1      0K      0K     root     rcu_bh
+   10  1   0% S     1      0K      0K     root     rcuop/0
+
+
+
+User 0%, System 1%, IOW 0%, IRQ 0%
+User 0 + Nice 0 + Sys 3 + Idle 201 + IOW 0 + IRQ 0 + SIRQ 0 = 204
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+ 3203  1   0% R     1   1940K    536K     shell    top
+ 1392  0   0% S     5   4788K      0K     shell    /sbin/adbd
+    3  0   0% S     1      0K      0K     root     ksoftirqd/0
+    4  0   0% S     1      0K      0K     root     kworker/0:0
+    5  0   0% S     1      0K      0K     root     kworker/0:0H
+    6  1   0% S     1      0K      0K     root     kworker/u4:0
+    7  0   0% S     1      0K      0K     root     rcu_preempt
+    8  1   0% S     1      0K      0K     root     rcu_sched
+    9  0   0% S     1      0K      0K     root     rcu_bh
+   10  1   0% S     1      0K      0K     root     rcuop/0
+
+
+
+User 0%, System 0%, IOW 0%, IRQ 0%
+User 0 + Nice 0 + Sys 1 + Idle 201 + IOW 0 + IRQ 0 + SIRQ 1 = 203
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+ 3203  1   0% R     1   1940K    536K     shell    top
+    2  1   0% S     1      0K      0K     root     kthreadd
+    3  0   0% S     1      0K      0K     root     ksoftirqd/0
+    4  0   0% S     1      0K      0K     root     kworker/0:0
+    5  0   0% S     1      0K      0K     root     kworker/0:0H
+    6  1   0% S     1      0K      0K     root     kworker/u4:0
+    7  0   0% S     1      0K      0K     root     rcu_preempt
+    8  1   0% S     1      0K      0K     root     rcu_sched
+    9  0   0% S     1      0K      0K     root     rcu_bh
+   10  1   0% S     1      0K      0K     root     rcuop/0
+
+
+
+User 0%, System 0%, IOW 0%, IRQ 0%
+User 1 + Nice 0 + Sys 1 + Idle 200 + IOW 0 + IRQ 0 + SIRQ 0 = 202
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+ 3203  1   0% R     1   1940K    536K     shell    top
+    2  1   0% S     1      0K      0K     root     kthreadd
+    3  0   0% S     1      0K      0K     root     ksoftirqd/0
+    4  0   0% S     1      0K      0K     root     kworker/0:0
+    5  0   0% S     1      0K      0K     root     kworker/0:0H
+    6  1   0% S     1      0K      0K     root     kworker/u4:0
+    7  0   0% S     1      0K      0K     root     rcu_preempt
+    8  1   0% S     1      0K      0K     root     rcu_sched
+    9  0   0% S     1      0K      0K     root     rcu_bh
+   10  1   0% S     1      0K      0K     root     rcuop/0
+
+
+
+User 0%, System 0%, IOW 0%, IRQ 0%
+User 0 + Nice 0 + Sys 2 + Idle 202 + IOW 0 + IRQ 0 + SIRQ 0 = 204
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+ 3203  1   0% R     1   1940K    536K     shell    top
+ 1392  0   0% S     5   4788K      0K     shell    /sbin/adbd
+    3  0   0% S     1      0K      0K     root     ksoftirqd/0
+    4  0   0% S     1      0K      0K     root     kworker/0:0
+    5  0   0% S     1      0K      0K     root     kworker/0:0H
+    6  1   0% S     1      0K      0K     root     kworker/u4:0
+    7  0   0% S     1      0K      0K     root     rcu_preempt
+    8  1   0% S     1      0K      0K     root     rcu_sched
+    9  0   0% S     1      0K      0K     root     rcu_bh
+   10  1   0% S     1      0K      0K     root     rcuop/0
+
+
+
+User 0%, System 0%, IOW 0%, IRQ 0%
+User 1 + Nice 0 + Sys 1 + Idle 200 + IOW 0 + IRQ 0 + SIRQ 0 = 202
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+    7  0   0% S     1      0K      0K     root     rcu_preempt
+ 3203  1   0% R     1   1940K    536K     shell    top
+    3  0   0% S     1      0K      0K     root     ksoftirqd/0
+    4  0   0% S     1      0K      0K     root     kworker/0:0
+    5  0   0% S     1      0K      0K     root     kworker/0:0H
+    6  1   0% S     1      0K      0K     root     kworker/u4:0
+    8  1   0% S     1      0K      0K     root     rcu_sched
+    9  0   0% S     1      0K      0K     root     rcu_bh
+   10  1   0% S     1      0K      0K     root     rcuop/0
+   11  0   0% S     1      0K      0K     root     rcuos/0
+
+
+
+User 0%, System 0%, IOW 0%, IRQ 0%
+User 0 + Nice 0 + Sys 1 + Idle 200 + IOW 0 + IRQ 0 + SIRQ 0 = 201
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+ 3203  1   0% R     1   1940K    536K     shell    top
+    2  1   0% S     1      0K      0K     root     kthreadd
+    3  0   0% S     1      0K      0K     root     ksoftirqd/0
+    4  0   0% S     1      0K      0K     root     kworker/0:0
+    5  0   0% S     1      0K      0K     root     kworker/0:0H
+    6  1   0% S     1      0K      0K     root     kworker/u4:0
+    7  0   0% S     1      0K      0K     root     rcu_preempt
+    8  1   0% S     1      0K      0K     root     rcu_sched
+    9  0   0% S     1      0K      0K     root     rcu_bh
+   10  1   0% S     1      0K      0K     root     rcuop/0
