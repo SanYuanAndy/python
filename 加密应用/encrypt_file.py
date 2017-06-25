@@ -8,9 +8,6 @@ stdin_encoding =  sys.stdin.encoding
 stdout_encoding = sys.stdout.encoding
 
 def console_input(output):
-    if not os.path.exists(output):
-        os.mkdir(output)
-    
     source_file_path = None
     secret = None
     prompt1 = "需要加密的文件(输入'exit'退出):"
@@ -42,7 +39,11 @@ def console_input(output):
     file_name = path_struct[1]
     print file_name
     print file_parent_path
-    
+    if len(file_parent_path) != 0:
+        output = (r"%s\%s")%(file_parent_path, output)
+    if not os.path.exists(output):
+        os.mkdir(output)
+        
     key = encrypt.fillZero(secret)
     encypted_file_name = binascii.b2a_hex(encrypt.encryptText(file_name, key, encrypt.param))
     print encypted_file_name
