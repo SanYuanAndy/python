@@ -4,8 +4,8 @@ import syos
 import code
 import time
 
-targetDir = "/sdcard/txz/voice/wk"
-#targetDir = "/sdcard/alldemo/voice_wk"
+#targetDir = "/sdcard/txz/voice/wk"
+targetDir = "/sdcard/alldemo/voice_wk"
 def list_dir(path):
     cmd = 'adb shell ls %s'%(path)
     p = os.popen(cmd)
@@ -28,8 +28,8 @@ def pull(all_file, targetDir):
     time.sleep(0.05)
     count = 0
     for f in all_file:
-        if not f.startswith("txz_"):
-            continue
+        #if not f.startswith("txz_"):
+            #continue
         oldName = f.replace("\r\n", "")
         print oldName
         #continue
