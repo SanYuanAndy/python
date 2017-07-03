@@ -1,12 +1,11 @@
 #coding=utf8
 import urllib2
 import time
-
 def request(url):
     response = urllib2.urlopen(url)
     return response.read()
-
 text = '你好'
+
 url_svr = "http://scv2.hivoice.cn/service/iss"
 param1 = "platform=&screen="
 param2 = "text=%s"%(urllib2.quote(text))
