@@ -2,6 +2,7 @@
 import json
 import os
 
+max_len = 0
 def load(data):
     with open(data, 'r') as f:
         sJson = f.read()
@@ -11,7 +12,7 @@ def load(data):
 
 #结果存储到results中，results类型为map
 def parse(sFile, results):
-    print sFile
+    #print sFile
     jsonArray = load(sFile)
     for jsonObj in jsonArray:
         sName = jsonObj['name']
@@ -39,8 +40,10 @@ def parse(sFile, results):
                 obj[key] = scores
             scores = obj[key]
             scores.append(score)
-    print
-    print
+            row = len(scores)
+            global max_len
+            if max_len < row:
+                max_len = row
 
 #结果存储到results中，results类型为map
 def parses(results):
@@ -55,6 +58,7 @@ def parses(results):
            
 results_map = {}
 parses(results_map)
+print max_len
 
 result_keys = results_map.keys()
 for result in result_keys:
@@ -80,7 +84,11 @@ for result in result_keys:
             index = sScore.find('.')
             if index != -1:
                 sScore = sScore[0:index + 4]
-            score_v3 = '%s %s '%(score_v3, sScore)
+            score_v3 = '%s %6s '%(score_v3, sScore)
+        #对齐
+        for i in range(0, max_len - len(scores)):
+            sScore = ''
+            score_v3 = '%s %6s '%(score_v3, sScore)
         
     sResult = '%s  %5s  %s %s'%(sName, sWord, score_v3, score_v2)
     print sResult
