@@ -1,0 +1,244 @@
+
+F:\学习\学习过程文档\python脚本\python\语义识别>python autoasr.py
+0
+    69188 kB: com.txznet.txz (pid 24821)
+5
+    69820 kB: com.txznet.txz (pid 24821)
+10
+    69820 kB: com.txznet.txz (pid 24821)
+15
+    69828 kB: com.txznet.txz (pid 24821)
+20
+    69840 kB: com.txznet.txz (pid 24821)
+25
+    69860 kB: com.txznet.txz (pid 24821)
+30
+    69868 kB: com.txznet.txz (pid 24821)
+35
+    69858 kB: com.txznet.txz (pid 24821)
+40
+    69886 kB: com.txznet.txz (pid 24821)
+45
+    69914 kB: com.txznet.txz (pid 24821)
+50
+    69910 kB: com.txznet.txz (pid 24821)
+55
+    69950 kB: com.txznet.txz (pid 24821)
+60
+    69958 kB: com.txznet.txz (pid 24821)
+65
+    69962 kB: com.txznet.txz (pid 24821)
+70
+    70034 kB: com.txznet.txz (pid 24821)
+75
+    70034 kB: com.txznet.txz (pid 24821)
+80
+    70054 kB: com.txznet.txz (pid 24821)
+85
+    70074 kB: com.txznet.txz (pid 24821)
+90
+    70270 kB: com.txznet.txz (pid 24821)
+95
+    70298 kB: com.txznet.txz (pid 24821)
+100
+    70310 kB: com.txznet.txz (pid 24821)
+105
+    70306 kB: com.txznet.txz (pid 24821)
+110
+    70306 kB: com.txznet.txz (pid 24821)
+115
+    70298 kB: com.txznet.txz (pid 24821)
+120
+    70370 kB: com.txznet.txz (pid 24821)
+125
+    70358 kB: com.txznet.txz (pid 24821)
+130
+    70350 kB: com.txznet.txz (pid 24821)
+135
+    70382 kB: com.txznet.txz (pid 24821)
+140
+    70414 kB: com.txznet.txz (pid 24821)
+145
+    70482 kB: com.txznet.txz (pid 24821)
+150
+    70502 kB: com.txznet.txz (pid 24821)
+155
+    70506 kB: com.txznet.txz (pid 24821)
+160
+    70542 kB: com.txznet.txz (pid 24821)
+165
+    70546 kB: com.txznet.txz (pid 24821)
+170
+    70586 kB: com.txznet.txz (pid 24821)
+175
+    70594 kB: com.txznet.txz (pid 24821)
+180
+    70610 kB: com.txznet.txz (pid 24821)
+185
+    70630 kB: com.txznet.txz (pid 24821)
+190
+    70630 kB: com.txznet.txz (pid 24821)
+195
+    70674 kB: com.txznet.txz (pid 24821)
+200
+    70662 kB: com.txznet.txz (pid 24821)
+205
+    70698 kB: com.txznet.txz (pid 24821)
+210
+    70734 kB: com.txznet.txz (pid 24821)
+215
+    70744 kB: com.txznet.txz (pid 24821)
+220
+    70762 kB: com.txznet.txz (pid 24821)
+225
+    70774 kB: com.txznet.txz (pid 24821)
+230
+    70802 kB: com.txznet.txz (pid 24821)
+235
+    70830 kB: com.txznet.txz (pid 24821)
+240
+    70866 kB: com.txznet.txz (pid 24821)
+245
+    70894 kB: com.txznet.txz (pid 24821)
+250
+    70898 kB: com.txznet.txz (pid 24821)
+255
+    70918 kB: com.txznet.txz (pid 24821)
+260
+    70930 kB: com.txznet.txz (pid 24821)
+265
+    70962 kB: com.txznet.txz (pid 24821)
+270
+    70982 kB: com.txznet.txz (pid 24821)
+275
+    71006 kB: com.txznet.txz (pid 24821)
+280
+    71034 kB: com.txznet.txz (pid 24821)
+285
+    71038 kB: com.txznet.txz (pid 24821)
+290
+    71058 kB: com.txznet.txz (pid 24821)
+295
+    71098 kB: com.txznet.txz (pid 24821)
+300
+    71110 kB: com.txznet.txz (pid 24821)
+305
+    71142 kB: com.txznet.txz (pid 24821)
+310
+    71158 kB: com.txznet.txz (pid 24821)
+315
+    71162 kB: com.txznet.txz (pid 24821)
+320
+    71186 kB: com.txznet.txz (pid 24821)
+Traceback (most recent call last):
+  File "autoasr.py", line 64, in <module>
+    time.sleep(5)
+KeyboardInterrupt
+终止批处理操作吗(Y/N)?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+F:\学习\学习过程文档\python脚本\python\语义识别>python autoasr.py
+0
+    68080 kB: com.txznet.txz (pid 1585)
+5
+    68475 kB: com.txznet.txz (pid 1585)
+10
+    68735 kB: com.txznet.txz (pid 1585)
+15
+    68723 kB: com.txznet.txz (pid 1585)
+20
+    68703 kB: com.txznet.txz (pid 1585)
+25
+    68735 kB: com.txznet.txz (pid 1585)
+30
+    68735 kB: com.txznet.txz (pid 1585)
+35
+    68747 kB: com.txznet.txz (pid 1585)
+40
+    68769 kB: com.txznet.txz (pid 1585)
+45
+    68829 kB: com.txznet.txz (pid 1585)
+50
+    68817 kB: com.txznet.txz (pid 1585)
+55
+    68845 kB: com.txznet.txz (pid 1585)
+60
+    68849 kB: com.txznet.txz (pid 1585)
+65
+    68845 kB: com.txznet.txz (pid 1585)
+70
+    68893 kB: com.txznet.txz (pid 1585)
+75
+    68905 kB: com.txznet.txz (pid 1585)
+80
+    68925 kB: com.txznet.txz (pid 1585)
+85
+    68985 kB: com.txznet.txz (pid 1585)
+90
+    68965 kB: com.txznet.txz (pid 1585)
+95
+    69053 kB: com.txznet.txz (pid 1585)
+100
+    69041 kB: com.txznet.txz (pid 1585)
+105
+    69061 kB: com.txznet.txz (pid 1585)
+110
+    69081 kB: com.txznet.txz (pid 1585)
+115
+    69081 kB: com.txznet.txz (pid 1585)
+120
+    69125 kB: com.txznet.txz (pid 1585)
+125
+    69221 kB: com.txznet.txz (pid 1585)
+130
+    69237 kB: com.txznet.txz (pid 1585)
+135
+    69265 kB: com.txznet.txz (pid 1585)
+140
+    69265 kB: com.txznet.txz (pid 1585)
+145
+    69337 kB: com.txznet.txz (pid 1585)
+150
+    69337 kB: com.txznet.txz (pid 1585)
+155
+    69369 kB: com.txznet.txz (pid 1585)
+160
+    69369 kB: com.txznet.txz (pid 1585)
+165
+    69381 kB: com.txznet.txz (pid 1585)
+170
+    69445 kB: com.txznet.txz (pid 1585)
+175
+    69473 kB: com.txznet.txz (pid 1585)
+180
+    69481 kB: com.txznet.txz (pid 1585)
+185
+    69485 kB: com.txznet.txz (pid 1585)
+190
+    69469 kB: com.txznet.txz (pid 1585)
+195
+    69497 kB: com.txznet.txz (pid 1585)
+200
+    69485 kB: com.txznet.txz (pid 1585)
+205
+    69485 kB: com.txznet.txz (pid 1585)
+210
+    69521 kB: com.txznet.txz (pid 1585)
+Traceback (most recent call last):
+  File "autoasr.py", line 64, in <module>
+    time.sleep(5)
+KeyboardInterrupt
+终止批处理操作吗(Y/N)?

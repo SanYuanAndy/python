@@ -1,0 +1,6 @@
+User 0%, System 0%, IOW 0%, IRQ 0%
+User 0 + Nice 0 + Sys 0 + Idle 200 + IOW 0 + IRQ 0 + SIRQ 0 = 200
+PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+3203  1   1% R     1   1936K    536K     shell    top
+2012  1   0% S     3   4108K    376K     media_rw /system/bin/sdcard
+1905  1   0% S    10 738468K  41296K  fg u0_a16   com.bluestacks.bstfolder

@@ -5,6 +5,7 @@ from syutil import print_n
 from syutil import del_dir
 import ctypes
 import math
+import struct
 
 #将PCM字节流转为short数组
 def getSamples(source, bitWidth):
@@ -22,12 +23,25 @@ def getSamples(source, bitWidth):
     while i + byteCnt < seq_len:
         v = 0
         k = 0
+        v_byteArray = [0,0,0,0]
         while k < byteCnt:
             #小端模式，低字节低地址
-            v = v | (seq[i + k] << (8 * k))
+            v = v | (seq[i + k] << (8 * (k)))
+            v_byteArray[byteCnt - 1 - k] = seq[i +k]
+            print hex(seq[i + k])
             k = k + 1
+            
         i = i + byteCnt
-        
+        tmp = ctypes.c_float(v).value
+        print tmp
+        print 'bbb'
+        tmp = struct.unpack('!f',struct.pack('4b', *v_byteArray))[0]
+        print tmp
+        print 'aaa'
+        a = 1
+        if tmp < 0:
+            a = -1
+        v = a * (2**32 - 1)**(a * tmp)
         value.append(v)
         
     return value
@@ -56,10 +70,11 @@ def saveVoice(outstream,target):
     fw.write(outstream)
     fw.close()
 
-
-samples = getSamples('test32.pcm', 32)
-outstream = getByteStream(samples, 32, 16)
-saveVoice(outstream, 'test_1.pcm')
+hightWidth = 32
+lowWidth = 16
+samples = getSamples('f_%d.pcm'%(hightWidth), hightWidth)
+outstream = getByteStream(samples, hightWidth, lowWidth)
+saveVoice(outstream, 'test_%d_%d.pcm'%(hightWidth, lowWidth))
 
 
     
