@@ -18,8 +18,9 @@ def killProcssById(procId):
     os.system(cmd)
     
 #pid = getProcessIdByName('com.ls.bluetooth.service')
-#pid = getProcessIdByName('com.txznet.txz')
-pid = getProcessIdByName('com.sy.persistentapp')
+pid = getProcessIdByName('com.txznet.txz')
+#pid = getProcessIdByName('com.sy.persistentapp')
+#pid = getProcessIdByName('com.txznet.music')
 print pid
 
 killProcssById(pid)
