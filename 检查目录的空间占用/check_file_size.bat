@@ -1,0 +1,2 @@
+python check_file_size.py
+pause
